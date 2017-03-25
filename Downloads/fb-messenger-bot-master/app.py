@@ -50,7 +50,7 @@ def webhook():
 
                     response = conversation.message(workspace_id=workspace_id, message_input={
                     'text': message_text})
-                    send_message(sender_id, response)
+                    send_message(sender_id, response['output']['text'][0])
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
